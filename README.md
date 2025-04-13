@@ -14,7 +14,7 @@ go get github.com/sebasvil20/templicons
 ```
 
 ## Features
-- Lightweight: Each icon is an inline SVG component, so you can use them without any external dependencies.
+- Lightweight: Each icon is an inline SVG component, so you can use them without any external dependencies. Don't worry about this pkg weight, Go compiler will remove all the unused icons from your binary.
 - Customizable: You can easily customize the size, color, and other properties of the icons using `i.Props` structure.
 - Easy to use: The icons are easy to use and integrate into your projects.
 - Over 5880 icons: The library includes over 5880 icons from Tabler, so you can find the perfect icon for your project.
