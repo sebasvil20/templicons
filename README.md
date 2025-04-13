@@ -126,6 +126,13 @@ go env GOPATH
 
 You can also use all Tailwind CSS classes you want in the `Class` prop.
 
+#### Why classes instead of explicit colors?
+Using classes allow you to change the theme without having to change the color of the icons manually.
+If you have the utility classes like "primary", just set the icon to use that color and 
+when you change the theme, the icon will change too.
+
+That doesn't mean you can't use explicit colors, you can use any color you want in the `Class` prop.
+
 ### Size constants
 Defined in pixels, constant utilities for you to keep consistency in your project.
 ```go
