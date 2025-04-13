@@ -116,6 +116,10 @@ your tailwind version:
 ```js
 @source "${GOPATH}/pkg/mod/github.com/sebasvil20/templicons@*/**/*.{go,templ}";
 ```
+Replace ` ${GOPATH}` with your Go path. This will include all the icons in the Tailwind CSS build process.
+```
+go env GOPATH
+```
 
 > [!NOTE]
 > Constants are just for convenience, you can use any color you want in the `Class` prop. 
