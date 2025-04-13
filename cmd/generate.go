@@ -69,15 +69,23 @@ func processFile(dirPath string, filename string, isFilled bool) {
 
 	outputPath := filepath.Join("./tabler", camelCaseName+".templ")
 
+	// Usar el componente adecuado según el tipo de icono
+	var iconComponent string
+	if isFilled {
+		iconComponent = "FilledIcon"
+	} else {
+		iconComponent = "OutlinedIcon"
+	}
+
 	templContent := fmt.Sprintf(`package tabler
 import "github.com/sebasvil20/templicons/i"
 
 templ %s(props ...i.Props) {
-    @i.Icon("0 0 24 24", props...) {
+    @i.%s("0 0 24 24", props...) {
         %s
     }
 }
-`, pascalCaseName, svgContent)
+`, pascalCaseName, iconComponent, svgContent)
 
 	err = ioutil.WriteFile(outputPath, []byte(templContent), 0644)
 	if err != nil {

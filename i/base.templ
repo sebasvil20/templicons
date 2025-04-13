@@ -1,34 +1,52 @@
 package i
 
 const (
-    XXS = "8"
-	XS  = "16"
-	SM  = "20"
-	MD  = "24"
-	LG  = "32"
-	XL  = "48"
-	XXL = "64"
+    SizeXXS = "8"
+	SizeXS  = "16"
+	SizeSM  = "20"
+	SizeMD  = "24"
+	SizeLG  = "32"
+	SizeXL  = "48"
+	SizeXXL = "64"
 )
 
 const (
-	Primary         = "text-primary"
-	PrimaryContent  = "text-primary-content"
-	Secondary       = "text-secondary"
-	SecondaryContent = "text-secondary-content"
-	Accent          = "text-accent"
-	AccentContent   = "text-accent-content"
-	Neutral         = "text-neutral"
-	NeutralContent  = "text-neutral-content"
-	Base            = "text-base-content"
-	Info            = "text-info"
-	InfoContent     = "text-info-content"
-	Success         = "text-success"
-	SuccessContent  = "text-success-content"
-	Warning         = "text-warning"
-	WarningContent  = "text-warning-content"
-	Error           = "text-error"
-	ErrorContent    = "text-error-content"
-	Current         = "text-current"
+	StrokePrimary         = "text-primary"
+	StrokePrimaryContent  = "text-primary-content"
+	StrokeSecondary       = "text-secondary"
+	StrokeSecondaryContent = "text-secondary-content"
+	StrokeAccent          = "text-accent"
+	StrokeAccentContent   = "text-accent-content"
+	StrokeNeutral         = "text-neutral"
+	StrokeNeutralContent  = "text-neutral-content"
+	StrokeBase            = "text-base-content"
+	StrokeInfo            = "text-info"
+	StrokeInfoContent     = "text-info-content"
+	StrokeSuccess         = "text-success"
+	StrokeSuccessContent  = "text-success-content"
+	StrokeWarning         = "text-warning"
+	StrokeWarningContent  = "text-warning-content"
+	StrokeError           = "text-error"
+	StrokeErrorContent    = "text-error-content"
+	StrokeCurrent         = "text-current"
+    FillPrimary         = "fill-primary"
+    FillPrimaryContent  = "fill-primary-content"
+    FillSecondary       = "fill-secondary"
+    FillSecondaryContent = "fill-secondary-content"
+    FillAccent          = "fill-accent"
+    FillAccentContent   = "fill-accent-content"
+    FillNeutral         = "fill-neutral"
+    FillNeutralContent  = "fill-neutral-content"
+    FillBase            = "fill-base-content"
+    FillInfo            = "fill-info"
+    FillInfoContent     = "fill-info-content"
+    FillSuccess         = "fill-success"
+    FillSuccessContent  = "fill-success-content"
+    FillWarning         = "fill-warning"
+    FillWarningContent  = "fill-warning-content"
+    FillError           = "fill-error"
+    FillErrorContent    = "fill-error-content"
+    FillCurrent         = "fill-current"
 )
 
 const (
@@ -74,7 +92,7 @@ func DefaultProps() Props {
     }
 }
 
-templ Icon(viewBox string, props ...Props) {
+templ OutlinedIcon(viewBox string, props ...Props) {
     {{p := DefaultProps() }}
     if len(props) > 0 {
        {{ p.GetProps(props[0]) }}
@@ -88,6 +106,28 @@ templ Icon(viewBox string, props ...Props) {
         stroke-width={ p.StrokeWidth }
         stroke-linecap="round"
         stroke-linejoin="round"
+        if p.ID != "" {
+            id={ p.ID }
+        }
+        aria-label={ p.AriaLabel }
+        role="img"
+        class={ "icon " + p.Class }
+    >
+       { children... }
+    </svg>
+}
+
+templ FilledIcon(viewBox string, props ...Props) {
+    {{p := DefaultProps() }}
+    if len(props) > 0 {
+       {{ p.GetProps(props[0]) }}
+    }
+    <svg
+       width={ p.Size }
+        height={ p.Size }
+        viewBox={ viewBox }
+        fill="currentColor"
+        stroke="none"
         if p.ID != "" {
             id={ p.ID }
         }
