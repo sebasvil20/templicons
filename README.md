@@ -20,10 +20,10 @@ import (
 
 templ YourView() {
     // with default props
-    @icons.Menu2()
+    @tabler.Menu2()
     
     // with custom props
-    @icons.Menu2(i.Props{
+    @tabler.Menu2(i.Props{
         Size: icons.XS,
         Class: "text-red-500",
         StrokeWidth: "2",

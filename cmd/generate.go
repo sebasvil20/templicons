@@ -72,7 +72,7 @@ func processFile(dirPath string, filename string, isFilled bool) {
 	templContent := fmt.Sprintf(`package tabler
 import "github.com/sebasvil20/templicons/i"
 
-templ %s(props ...Props) {
+templ %s(props ...i.Props) {
     @i.Icon("0 0 24 24", props...) {
         %s
     }
