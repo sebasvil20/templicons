@@ -24,7 +24,7 @@ templ YourView() {
     
     // with custom props
     @tabler.Menu2(i.Props{
-        Size: icons.XS,
+        Size: i.XS,
         Class: "text-red-500",
         StrokeWidth: "2",
         ID: "menu-icon",
