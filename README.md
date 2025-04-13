@@ -114,7 +114,7 @@ This is a list of the colors you can use, separated by filled and stroked:
 In order to use this constants, you need to have Tailwind CSS configured in your project and add this to the `input.css` (Tailwind V4) or equivalent in
 your tailwind version:
 ```js
-@source "${GOPATH}/pkg/mod/github.com/sebasvil20/templicons@*/**/*.{go,templ}";
+@source "${GOPATH}/pkg/mod/github.com/sebasvil20/templicons@*/i/*.{go,templ}";
 ```
 Replace ` ${GOPATH}` with your Go path. This will include all the icons in the Tailwind CSS build process.
 ```
