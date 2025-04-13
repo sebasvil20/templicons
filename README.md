@@ -45,7 +45,7 @@ templ YourView() {
     @tabler.Menu2(i.Props{
         Size: i.SizeXS,
         Class: i.StrokeWarning,
-        StrokeWidth: "2",
+        StrokeWidth: i.StrokeBold,
         ID: "menu-icon",
         AriaLabel: "menu-icon",
     })
@@ -138,11 +138,11 @@ You can use them in the `Size` prop or just use the size you want in pixels.
 ### Stroke width constants
 Defined in pixels, constant utilities for you to keep consistency in your project. This is only valid for outlined icons.
 ```go
-    Thin    = "1"
-    Regular = "1.5"
-    Medium  = "2"
-    Bold    = "2.5"
-    Heavy   = "3"
+    StrokeThin    = "1"
+    StrokeRegular = "1.5"
+    StrokeMedium  = "2"
+    StrokeBold    = "2.5"
+    StrokeHeavy   = "3"
 ```
 You can use them in the `StrokeWidth` prop or just use the size you want in pixels.
 

@@ -58,11 +58,11 @@ const (
 )
 
 const (
-	Thin    = "1"
-	Regular = "1.5"
-	Medium  = "2"
-	Bold    = "2.5"
-	Heavy   = "3"
+	StrokeThin    = "1"
+	StrokeRegular = "1.5"
+	StrokeMedium  = "2"
+	StrokeBold    = "2.5"
+	StrokeHeavy   = "3"
 )
 
 type Props struct {
@@ -93,9 +93,9 @@ func (p *Props) GetProps(override Props) {
 
 func DefaultProps() Props {
 	return Props{
-		Size:        MD,
-		StrokeWidth: Regular,
-		Class:       Current,
+		Size:        SizeMD,
+		StrokeWidth: StrokeRegular,
+		Class:       StrokeCurrent,
 		AriaLabel:   "icon",
 	}
 }
