@@ -9,34 +9,52 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 const (
-	XXS = "8"
-	XS  = "16"
-	SM  = "20"
-	MD  = "24"
-	LG  = "32"
-	XL  = "48"
-	XXL = "64"
+	SizeXXS = "8"
+	SizeXS  = "16"
+	SizeSM  = "20"
+	SizeMD  = "24"
+	SizeLG  = "32"
+	SizeXL  = "48"
+	SizeXXL = "64"
 )
 
 const (
-	Primary          = "text-primary"
-	PrimaryContent   = "text-primary-content"
-	Secondary        = "text-secondary"
-	SecondaryContent = "text-secondary-content"
-	Accent           = "text-accent"
-	AccentContent    = "text-accent-content"
-	Neutral          = "text-neutral"
-	NeutralContent   = "text-neutral-content"
-	Base             = "text-base-content"
-	Info             = "text-info"
-	InfoContent      = "text-info-content"
-	Success          = "text-success"
-	SuccessContent   = "text-success-content"
-	Warning          = "text-warning"
-	WarningContent   = "text-warning-content"
-	Error            = "text-error"
-	ErrorContent     = "text-error-content"
-	Current          = "text-current"
+	StrokePrimary          = "text-primary"
+	StrokePrimaryContent   = "text-primary-content"
+	StrokeSecondary        = "text-secondary"
+	StrokeSecondaryContent = "text-secondary-content"
+	StrokeAccent           = "text-accent"
+	StrokeAccentContent    = "text-accent-content"
+	StrokeNeutral          = "text-neutral"
+	StrokeNeutralContent   = "text-neutral-content"
+	StrokeBase             = "text-base-content"
+	StrokeInfo             = "text-info"
+	StrokeInfoContent      = "text-info-content"
+	StrokeSuccess          = "text-success"
+	StrokeSuccessContent   = "text-success-content"
+	StrokeWarning          = "text-warning"
+	StrokeWarningContent   = "text-warning-content"
+	StrokeError            = "text-error"
+	StrokeErrorContent     = "text-error-content"
+	StrokeCurrent          = "text-current"
+	FillPrimary            = "fill-primary"
+	FillPrimaryContent     = "fill-primary-content"
+	FillSecondary          = "fill-secondary"
+	FillSecondaryContent   = "fill-secondary-content"
+	FillAccent             = "fill-accent"
+	FillAccentContent      = "fill-accent-content"
+	FillNeutral            = "fill-neutral"
+	FillNeutralContent     = "fill-neutral-content"
+	FillBase               = "fill-base-content"
+	FillInfo               = "fill-info"
+	FillInfoContent        = "fill-info-content"
+	FillSuccess            = "fill-success"
+	FillSuccessContent     = "fill-success-content"
+	FillWarning            = "fill-warning"
+	FillWarningContent     = "fill-warning-content"
+	FillError              = "fill-error"
+	FillErrorContent       = "fill-error-content"
+	FillCurrent            = "fill-current"
 )
 
 const (
@@ -119,7 +137,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(p.Size)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 83, Col: 21}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 101, Col: 21}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
@@ -132,7 +150,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var4 string
 		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.Size)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 84, Col: 23}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 102, Col: 23}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
@@ -145,7 +163,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var5 string
 		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(viewBox)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 85, Col: 25}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 103, Col: 25}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 		if templ_7745c5c3_Err != nil {
@@ -158,7 +176,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var6 string
 		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(p.StrokeWidth)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 88, Col: 36}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 106, Col: 36}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
@@ -176,7 +194,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(p.ID)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 92, Col: 21}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 110, Col: 21}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
@@ -194,7 +212,7 @@ func OutlinedIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var8 string
 		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(p.AriaLabel)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 94, Col: 32}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 112, Col: 32}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 		if templ_7745c5c3_Err != nil {
@@ -266,7 +284,7 @@ func FilledIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var12 string
 		templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(p.Size)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 108, Col: 21}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 126, Col: 21}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 		if templ_7745c5c3_Err != nil {
@@ -279,7 +297,7 @@ func FilledIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var13 string
 		templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(p.Size)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 109, Col: 23}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 127, Col: 23}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 		if templ_7745c5c3_Err != nil {
@@ -292,7 +310,7 @@ func FilledIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var14 string
 		templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(viewBox)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 110, Col: 25}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 128, Col: 25}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 		if templ_7745c5c3_Err != nil {
@@ -310,7 +328,7 @@ func FilledIcon(viewBox string, props ...Props) templ.Component {
 			var templ_7745c5c3_Var15 string
 			templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(p.ID)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 114, Col: 21}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 132, Col: 21}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
 			if templ_7745c5c3_Err != nil {
@@ -328,7 +346,7 @@ func FilledIcon(viewBox string, props ...Props) templ.Component {
 		var templ_7745c5c3_Var16 string
 		templ_7745c5c3_Var16, templ_7745c5c3_Err = templ.JoinStringErrs(p.AriaLabel)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 116, Col: 32}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `i/base.templ`, Line: 134, Col: 32}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var16))
 		if templ_7745c5c3_Err != nil {
