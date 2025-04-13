@@ -6,7 +6,7 @@ This is a collection of Tabler icons made as templ components for use in your pr
 
 ## Installation
 ```bash
-go get github.com/sebasvil20/templicon
+go get github.com/sebasvil20/templicons
 ```
 
 ## Usage
@@ -14,8 +14,8 @@ go get github.com/sebasvil20/templicon
 package yourview
 
 import (
-    "github.com/sebasvil20/templicon/i"
-    "github.com/sebasvil20/templicon/tabler"
+    "github.com/sebasvil20/templicons/i"
+    "github.com/sebasvil20/templicons/tabler"
 )
 
 templ YourView() {
