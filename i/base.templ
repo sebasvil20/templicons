@@ -139,3 +139,25 @@ templ FilledIcon(viewBox string, props ...Props) {
     </svg>
 }
 
+
+templ FlagIcon(viewBox string, props ...Props) {
+    {{p := DefaultProps() }}
+    if len(props) > 0 {
+       {{ p.GetProps(props[0]) }}
+    }
+    <svg
+       width={ p.Size }
+        height={ p.Size }
+        viewBox={ viewBox }
+        fill="currentColor"
+        stroke="none"
+        if p.ID != "" {
+            id={ p.ID }
+        }
+        aria-label={ p.AriaLabel }
+        role="img"
+        class={ "icon " + p.Class }
+    >
+       { children... }
+    </svg>
+}
