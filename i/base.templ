@@ -1,7 +1,9 @@
 package i
 
+import "strconv"
+
 const (
-    SizeXXS = "8"
+	SizeXXS = "8"
 	SizeXS  = "16"
 	SizeSM  = "20"
 	SizeMD  = "24"
@@ -11,42 +13,42 @@ const (
 )
 
 const (
-	StrokePrimary         = "text-primary"
-	StrokePrimaryContent  = "text-primary-content"
-	StrokeSecondary       = "text-secondary"
+	StrokePrimary          = "text-primary"
+	StrokePrimaryContent   = "text-primary-content"
+	StrokeSecondary        = "text-secondary"
 	StrokeSecondaryContent = "text-secondary-content"
-	StrokeAccent          = "text-accent"
-	StrokeAccentContent   = "text-accent-content"
-	StrokeNeutral         = "text-neutral"
-	StrokeNeutralContent  = "text-neutral-content"
-	StrokeBase            = "text-base-content"
-	StrokeInfo            = "text-info"
-	StrokeInfoContent     = "text-info-content"
-	StrokeSuccess         = "text-success"
-	StrokeSuccessContent  = "text-success-content"
-	StrokeWarning         = "text-warning"
-	StrokeWarningContent  = "text-warning-content"
-	StrokeError           = "text-error"
-	StrokeErrorContent    = "text-error-content"
-	StrokeCurrent         = "text-current"
-    FillPrimary         = "fill-primary"
-    FillPrimaryContent  = "fill-primary-content"
-    FillSecondary       = "fill-secondary"
-    FillSecondaryContent = "fill-secondary-content"
-    FillAccent          = "fill-accent"
-    FillAccentContent   = "fill-accent-content"
-    FillNeutral         = "fill-neutral"
-    FillNeutralContent  = "fill-neutral-content"
-    FillBase            = "fill-base-content"
-    FillInfo            = "fill-info"
-    FillInfoContent     = "fill-info-content"
-    FillSuccess         = "fill-success"
-    FillSuccessContent  = "fill-success-content"
-    FillWarning         = "fill-warning"
-    FillWarningContent  = "fill-warning-content"
-    FillError           = "fill-error"
-    FillErrorContent    = "fill-error-content"
-    FillCurrent         = "fill-current"
+	StrokeAccent           = "text-accent"
+	StrokeAccentContent    = "text-accent-content"
+	StrokeNeutral          = "text-neutral"
+	StrokeNeutralContent   = "text-neutral-content"
+	StrokeBase             = "text-base-content"
+	StrokeInfo             = "text-info"
+	StrokeInfoContent      = "text-info-content"
+	StrokeSuccess          = "text-success"
+	StrokeSuccessContent   = "text-success-content"
+	StrokeWarning          = "text-warning"
+	StrokeWarningContent   = "text-warning-content"
+	StrokeError            = "text-error"
+	StrokeErrorContent     = "text-error-content"
+	StrokeCurrent          = "text-current"
+	FillPrimary            = "fill-primary"
+	FillPrimaryContent     = "fill-primary-content"
+	FillSecondary          = "fill-secondary"
+	FillSecondaryContent   = "fill-secondary-content"
+	FillAccent             = "fill-accent"
+	FillAccentContent      = "fill-accent-content"
+	FillNeutral            = "fill-neutral"
+	FillNeutralContent     = "fill-neutral-content"
+	FillBase               = "fill-base-content"
+	FillInfo               = "fill-info"
+	FillInfoContent        = "fill-info-content"
+	FillSuccess            = "fill-success"
+	FillSuccessContent     = "fill-success-content"
+	FillWarning            = "fill-warning"
+	FillWarningContent     = "fill-warning-content"
+	FillError              = "fill-error"
+	FillErrorContent       = "fill-error-content"
+	FillCurrent            = "fill-current"
 )
 
 const (
@@ -58,106 +60,111 @@ const (
 )
 
 type Props struct {
-    Size        string
-    Class       string
-    StrokeWidth string
-    ID          string
-    AriaLabel   string
+	Size        string
+	Class       string
+	StrokeWidth string
+	ID          string
+	AriaLabel   string
 }
 
 func (p *Props) GetProps(override Props) {
-    if override.Size != "" {
-        p.Size = override.Size
-    }
-    if override.Class != "" {
-        p.Class = override.Class
-    }
-    if override.StrokeWidth != "" {
-        p.StrokeWidth = override.StrokeWidth
-    }
-    if override.ID != "" {
-        p.ID = override.ID
-    }
-    if override.AriaLabel != "" {
-        p.AriaLabel = override.AriaLabel
-    }
+	if override.Size != "" {
+		p.Size = override.Size
+	}
+	if override.Class != "" {
+		p.Class = override.Class
+	}
+	if override.StrokeWidth != "" {
+		p.StrokeWidth = override.StrokeWidth
+	}
+	if override.ID != "" {
+		p.ID = override.ID
+	}
+	if override.AriaLabel != "" {
+		p.AriaLabel = override.AriaLabel
+	}
 }
 
 func DefaultProps() Props {
-    return Props{
-       Size:        SizeMD,
-       StrokeWidth: StrokeRegular,
-       Class:       StrokeCurrent,
-       AriaLabel:   "icon",
-    }
+	return Props{
+		Size:        SizeMD,
+		StrokeWidth: StrokeRegular,
+		Class:       StrokeCurrent,
+		AriaLabel:   "icon",
+	}
 }
 
 templ OutlinedIcon(viewBox string, props ...Props) {
-    {{p := DefaultProps() }}
-    if len(props) > 0 {
-       {{ p.GetProps(props[0]) }}
-    }
-    <svg
-       width={ p.Size }
-        height={ p.Size }
-        viewBox={ viewBox }
-        fill="none"
-        stroke="currentColor"
-        stroke-width={ p.StrokeWidth }
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        if p.ID != "" {
-            id={ p.ID }
-        }
-        aria-label={ p.AriaLabel }
-        role="img"
-        class={ "icon " + p.Class }
-    >
-       { children... }
-    </svg>
+	{{ p := DefaultProps() }}
+	if len(props) > 0 {
+		{{ p.GetProps(props[0]) }}
+	}
+	<svg
+		width={ p.Size }
+		height={ p.Size }
+		viewBox={ viewBox }
+		fill="none"
+		stroke="currentColor"
+		stroke-width={ p.StrokeWidth }
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		if p.ID != "" {
+			id={ p.ID }
+		}
+		aria-label={ p.AriaLabel }
+		role="img"
+		class={ "icon " + p.Class }
+	>
+		{ children... }
+	</svg>
 }
 
 templ FilledIcon(viewBox string, props ...Props) {
-    {{p := DefaultProps() }}
-    if len(props) > 0 {
-       {{ p.GetProps(props[0]) }}
-    }
-    <svg
-       width={ p.Size }
-        height={ p.Size }
-        viewBox={ viewBox }
-        fill="currentColor"
-        stroke="none"
-        if p.ID != "" {
-            id={ p.ID }
-        }
-        aria-label={ p.AriaLabel }
-        role="img"
-        class={ "icon " + p.Class }
-    >
-       { children... }
-    </svg>
+	{{ p := DefaultProps() }}
+	if len(props) > 0 {
+		{{ p.GetProps(props[0]) }}
+	}
+	<svg
+		width={ p.Size }
+		height={ p.Size }
+		viewBox={ viewBox }
+		fill="currentColor"
+		stroke="none"
+		if p.ID != "" {
+			id={ p.ID }
+		}
+		aria-label={ p.AriaLabel }
+		role="img"
+		class={ "icon " + p.Class }
+	>
+		{ children... }
+	</svg>
 }
 
+func resizeFlag(height string) string {
+	newHeight, _ := strconv.ParseFloat(height, 64)
+	ratio := float64(newHeight) / 24
+	newWidth := float64(30) * ratio
+	return strconv.FormatFloat(newWidth, 'f', -2, 64)
+}
 
 templ FlagIcon(viewBox string, props ...Props) {
-    {{p := DefaultProps() }}
-    if len(props) > 0 {
-       {{ p.GetProps(props[0]) }}
-    }
-    <svg
-       width={ p.Size }
-        height={ p.Size }
-        viewBox={ viewBox }
-        fill="currentColor"
-        stroke="none"
-        if p.ID != "" {
-            id={ p.ID }
-        }
-        aria-label={ p.AriaLabel }
-        role="img"
-        class={ "icon " + p.Class }
-    >
-       { children... }
-    </svg>
+	{{ p := DefaultProps() }}
+	if len(props) > 0 {
+		{{ p.GetProps(props[0]) }}
+	}
+	New Width {{ resizeFlag(p.Size) }}
+	<svg
+		width={ p.Size }
+		height={ resizeFlag(p.Size) }
+		viewBox={ viewBox }
+		if p.ID != "" {
+			id={ p.ID }
+		}
+		aria-label={ p.AriaLabel }
+		role="img"
+		class={ "icon " + p.Class }
+	>
+		{ children... }
+	</svg>
 }

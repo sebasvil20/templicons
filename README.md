@@ -1,5 +1,5 @@
-# Templicons: Tabler icons made templ components
-This is a collection of Tabler icons made as templ components for use in your projects.
+# Templicons: Tabler icons and country flags made templ components
+This is a collection of Tabler icons and country flags made as templ components for use in your projects.
 
 > [!NOTE]
 > I'm not associated in any form with Tabler icons, this is just a collection of their icons made as templ components.
@@ -18,6 +18,7 @@ go get github.com/sebasvil20/templicons
 - Customizable: You can easily customize the size, color, and other properties of the icons using `i.Props` structure.
 - Easy to use: The icons are easy to use and integrate into your projects.
 - Over 5880 icons: The library includes over 5880 icons from Tabler, so you can find the perfect icon for your project.
+- Additionally, the library includes over 250 flag icons from Tabler's country flag collection.
 
 ## Usage
 ```go
@@ -26,12 +27,13 @@ package yourview
 import (
     "github.com/sebasvil20/templicons/i"
     "github.com/sebasvil20/templicons/tabler"
+    "github.com/sebasvil20/templicons/flags"
 )
 
 templ YourView() {
     // with default props
     @tabler.Menu2()
-    
+
     // with custom props
     @tabler.Menu2(i.Props{
         Size: "128",
@@ -40,12 +42,20 @@ templ YourView() {
         ID: "menu-icon",
         AriaLabel: "menu-icon",
     })
-    
+
     // You can also use the color constants or the size constans
     @tabler.Menu2(i.Props{
         Size: i.SizeXS,
         Class: i.StrokeWarning,
         StrokeWidth: i.StrokeBold,
+        ID: "menu-icon",
+        AriaLabel: "menu-icon",
+    })
+
+    @flags.UnitedStates()
+
+    @flags.UnitedKingdom(i.Props{
+        Size: i.SizeXS,
         ID: "menu-icon",
         AriaLabel: "menu-icon",
     })
@@ -61,7 +71,7 @@ Class:       "text-current",
 AriaLabel:   "icon",
 ```
 - `Size`: The size of the icon in pixels. You can use the size constants defined in the library or just use the size you want in pixels.
-- `StrokeWidth`: The stroke width of the icon in pixels. You can use the stroke width constants defined in the library or just use the size you want in pixels.
+- `StrokeWidth`: The stroke width of the icon in pixels. You can use the stroke width constants defined in the library or just use the size you want in pixels. (Ignored for flag icons)
 - `Class`: The class/es of the icon. You can use the color constants defined in the library or just use a list of classes you want.
 - `ID`: The id of the icon. This is useful if you want to use the icon in a form or if you want to use it with JavaScript.
 - `AriaLabel`: The aria-label of the icon. This is useful for accessibility purposes.
@@ -122,13 +132,13 @@ go env GOPATH
 ```
 
 > [!NOTE]
-> Constants are just for convenience, you can use any color you want in the `Class` prop. 
+> Constants are just for convenience, you can use any color you want in the `Class` prop.
 
 You can also use all Tailwind CSS classes you want in the `Class` prop.
 
 #### Why classes instead of explicit colors?
 Using classes allow you to change the theme without having to change the color of the icons manually.
-If you have the utility classes like "primary", just set the icon to use that color and 
+If you have the utility classes like "primary", just set the icon to use that color and
 when you change the theme, the icon will change too.
 
 That doesn't mean you can't use explicit colors, you can use any color you want in the `Class` prop.
