@@ -153,7 +153,6 @@ templ FlagIcon(viewBox string, props ...Props) {
 	if len(props) > 0 {
 		{{ p.GetProps(props[0]) }}
 	}
-	New Width {{ resizeFlag(p.Size) }}
 	<svg
 		width={ p.Size }
 		height={ resizeFlag(p.Size) }
